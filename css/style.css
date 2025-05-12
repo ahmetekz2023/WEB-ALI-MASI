@@ -1,0 +1,378 @@
+/* Genel Ayarlar ve Renk Değişkenleri */
+:root {
+    --primary-color: #dc3545; /* Kırmızımsı bir ana renk (arabalar için) */
+    --secondary-color: #6c757d;
+    --light-bg: #f8f9fa;
+    --dark-bg: #212529; /* Koyu arkaplan rengi */
+    --text-color: #212529;
+    --border-radius: 8px;
+    --padding-base: 15px;
+    --max-content-width: 1200px;
+}
+
+/* Tüm elementler için kutu boyutlandırma modelini ayarlar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Stili */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* İçerik Konteyneri */
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-base);
+}
+
+/* Header (Başlık Alanı) */
+.site-header {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: var(--padding-base) 0;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+.site-title {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.site-title:hover { /* Pseudo-class: Üzerine gelindiğinde renk değiştir */
+    color: var(--primary-color);
+}
+
+/* Navigasyon (Menü) */
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-nav .nav-list li {
+    margin-left: 20px;
+}
+
+.main-nav .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav .nav-link:hover { /* Pseudo-class: Üzerine gelindiğinde arkaplan rengini değiştir */
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.main-nav .nav-link.current-page { /* HTML Class: Aktif sayfa linkini vurgula */
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Hamburger Menü (Responsive Navigasyon için) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Ana İçerik Alanı */
+.site-main {
+    flex: 1;
+    padding: 30px 0;
+}
+
+.content-section {
+    background-color: white;
+    padding: calc(var(--padding-base) * 2);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+}
+
+/* Arabalar İçin Yeni Stiller */
+.car-showcase {
+    text-align: center;
+}
+
+.car-image-container {
+    margin: 20px auto;
+    max-width: 800px; /* Resim konteynerinin maksimum genişliği */
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.car-image {
+    max-width: 100%; /* Responsive resimler */
+    height: auto;
+    display: block; /* Resmi blok element yaparak altındaki boşluğu kaldırır */
+}
+
+.car-details {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.car-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+.car-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.car-details ul li {
+    background-color: #f0f0f0;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.car-details ul li strong {
+    color: var(--dark-bg);
+}
+
+
+/* Butonlar */
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* Üstten boşluk */
+}
+
+.primary-button:hover { /* Pseudo-class: Üzerine gelindiğinde renk değiştir ve yukarı kaydır */
+    background-color: #b30010; /* Kırmızının daha koyu tonu */
+    transform: translateY(-2px);
+}
+
+.primary-button:active { /* Pseudo-class: Tıklandığında renk değiştir ve geri kaydır */
+    background-color: #80000b;
+    transform: translateY(0);
+}
+
+/* Formlar */
+.form-section {
+    background-color: white;
+    padding: calc(var(--padding-base) * 2);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-top: 30px;
+    text-align: left; /* Form içeriğini sola yasla */
+}
+
+.form-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus, /* Pseudo-class: Odaklanıldığında kenarlık rengi ve gölge */
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5); /* Ana renge uygun gölge */
+    outline: none;
+}
+
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover { /* Pseudo-class: Üzerine gelindiğinde renk değiştir */
+    background-color: #b30010;
+}
+
+.success-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Sözde Elementler (Pseudo-elements) Örnekleri */
+/* Her paragrafın ilk harfini stilize et (araba tanıtımı için de geçerli) */
+.content-section p::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 3px;
+}
+
+/* Footer (Alt Bilgi Alanı) */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: var(--padding-base) 0;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin-top: 30px;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Tasarım - Media Queries */
+@media (max-width: 768px) {
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-header h1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .main-nav {
+        width: 100%;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-bg);
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        z-index: 1000;
+        border-radius: var(--border-radius);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .nav-list.open {
+        max-height: 500px;
+    }
+
+    .main-nav .nav-list li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav .nav-list li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav .nav-link {
+        padding: 15px 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        padding: var(--padding-base);
+    }
+
+    .form-section {
+        padding: var(--padding-base);
+    }
+    .car-details ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

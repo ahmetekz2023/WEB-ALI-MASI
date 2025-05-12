@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Otomotiv Dünyası</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/external.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="index.html" class="site-title">Otomotiv Dünyası</a></h1>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Menü Aç/Kapat">&#9776;</button>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Spor Coupe</a></li>
+                    <li><a href="page2.html" class="nav-link">Lüks Sedan</a></li>
+                    <li><a href="page3.html" class="nav-link">Elektrikli SUV</a></li>
+                    <li><a href="page4.html" class="nav-link">Image Map Galeri</a></li>
+                    <li><a href="page5.html" class="nav-link">Ticari Van</a></li>
+                    <li><a href="page6.html" class="nav-link">Performans Pikap</a></li>
+                    <li><a href="page7.html" class="nav-link">Kompakt SUV</a></li>
+                    <li><a href="page8.html" class="nav-link">Aile Station Vagon</a></li>
+                    <li><a href="page9.html" class="nav-link">Gelecek Konsept</a></li>
+                    <li><a href="page10.html" class="nav-link current-page">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main container">
+        <section class="content-section">
+            <h2>Bize Ulaşın</h2>
+            <p>Her türlü soru, öneri veya iş birliği talepleriniz için bizimle iletişime geçmekten çekinmeyin. Ekibimiz size en kısa sürede geri dönecektir.</p>
+
+            <div class="form-section">
+                <h3>İletişim Formu</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Adınız:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Gönder</button>
+                </form>
+                <div id="formMessage" class="success-message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Otomotiv Dünyası. Tüm Hakları Saklıdır.</p>
+            <p>Responsive Tasarım ve Image Map kullanılmıştır.</p>
+        </div>
+    </footer>
+</body>
+</html>
